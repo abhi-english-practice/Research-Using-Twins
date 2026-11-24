@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#20150f">
+<title>Research Using Twins | Abhi-Uyen</title>
+<style>
+:root{--coffee:#20150f;--coffee-light:#342218;--brown:#542f20;--line:#d8c0a8;--cream:#faf0e1;--paper:#fffaf1;--sand:#efe0ca;--ink:#2d211a;--muted:#684d3d;--green:#164d32;--green-bg:#d5ebda;--red:#89273c;--red-bg:#f5dbe0;--blue:#224970;--radius:14px}
+*{box-sizing:border-box} body{margin:0;background:var(--coffee);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+button,select,textarea{font:inherit} button,select{color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.47rem .78rem} button:not(:disabled),select{cursor:pointer} button:hover:not(:disabled){border-color:#996647;background:#f2dfc8} button:disabled{opacity:.48}
+button:focus-visible,a:focus-visible,summary:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #ad7029;outline-offset:3px}
+[hidden]{display:none!important} h1,h2,h3,p{margin:0} h2{font-size:1.18rem} h3{font-size:1.04rem} h1{font:700 clamp(2.18rem,4.6vw,4.55rem)/1.06 Georgia,serif;letter-spacing:-.035em;color:#fff5e7}
+.shell{max-width:1660px;margin:auto;padding:17px clamp(12px,2vw,30px) 0}.hero{display:grid;grid-template-columns:1fr;overflow:hidden;min-height:140px;border:1px solid #775542;border-radius:var(--radius);background:linear-gradient(110deg,#3e291d,#2d1d15);align-items:center}.hero.with-cover{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}.hero-copy{padding:clamp(18px,3vw,42px)}.hero-copy p{margin-top:9px;color:#f1d9be}.hero img{width:100%;height:100%;min-height:0;max-height:238px;object-fit:cover;align-self:stretch}.brand{display:block;color:#ecc7a5;font-size:.75rem;letter-spacing:.14em;font-weight:750;margin-bottom:9px}
+.main-nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:13px 0}.main-nav button[aria-pressed=true],button.primary{background:var(--brown);color:var(--paper);border-color:#aa7756;font-weight:700}.main-nav button[aria-pressed=true]:hover,button.primary:hover:not(:disabled){background:#704530;color:white}.main-nav .spacer,.bar .spacer{flex:1}.main-nav button,.bar button{font-weight:650}
+.player{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--sand);padding:9px 13px;border-radius:10px;margin-bottom:12px}.player label{font-size:.9rem;font-weight:700}.player audio{width:min(100%,550px);height:39px;flex:1;min-width:175px}.player select{padding:.25rem .38rem}.player button{padding:.25rem .55rem}
+.split{display:grid;grid-template-columns:minmax(0,1.26fr) minmax(0,1fr);gap:12px;align-items:stretch}.pane,.card{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);min-width:0}.pane{display:flex;flex-direction:column;overflow:hidden;height:clamp(460px,66vh,820px)}.pane-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;background:var(--sand);padding:10px 16px;color:var(--brown);border-bottom:1px solid var(--line);flex:none}.pane-head h2{font-size:1.04rem}.pane-head small{font-size:.79rem}.scroll{overflow:auto;overscroll-behavior:contain;min-height:0;flex:1;scrollbar-color:#b79980 transparent;padding:clamp(13px,2vw,27px)}
+.bar{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:11px 0;background:var(--sand);border:1px solid var(--line);border-radius:10px;padding:8px 11px}.bar button{padding:.36rem .65rem}.bar button[aria-current=true],.subnav button[aria-pressed=true]{box-shadow:inset 0 -2px var(--brown);border-color:var(--brown);font-weight:760}.bar .passed{background:var(--green-bg);color:var(--green)}.bar .missed{background:var(--red-bg);color:var(--red)}
+.home-reader,.sentence{max-width:1100px;margin-inline:auto}.home-reader{padding:clamp(15px,3vw,36px)}.read-block+.read-block{margin-top:1.1rem}.read-block h3{color:var(--brown);padding-bottom:.27rem;font-size:.94rem}.en-copy{font-size:clamp(1rem,1.32vw,1.23rem);line-height:1.79;text-align:justify;text-align-last:left}.vi-copy,.hint{color:#713e2d;background:#f3e5d2;border-left:3px solid #ac7654;border-radius:0 8px 8px 0;padding:.7rem .9rem;margin-top:.58rem}.vi-copy{text-align:justify;text-align-last:left}.chunk-link{font:inherit;font-weight:750;color:var(--blue);background:none;border:0;border-radius:2px;padding:0;text-align:left;display:inline;text-decoration:underline;text-decoration-color:#b3b3a6;text-underline-offset:3px}.chunk-link:hover:not(:disabled),.chunk-link.active{background:#f2d89a;color:#442b19}.found,.related{border-radius:3px}.found{background:var(--green-bg);color:var(--green)}.related{background:#ead7b5}.manual{box-shadow:inset 0 -5px #e8bc59}.now-speaking{background:#e9d7bc;border-radius:3px}
+.vocab-list{display:grid;gap:6px;margin:11px 0}.vocab-list button{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;text-align:left;padding:.5rem .65rem;width:100%}.vocab-list button[aria-pressed=true]{background:#f1dcb9;border-color:#9b653f}.vocab-list strong,.key-en{color:var(--blue)}.vocab-list span[lang=vi]{color:#723f2f}.focus-card,.review-block,.question-card,.note-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px}.focus-card h3,.review-block h3{color:var(--brown)}.focus-card p,.review-block p,.note-card p{margin:.3rem 0}.note-card{padding:10px 12px}.mini{font-size:.86rem;color:var(--muted)}.focus-card button,.review-block button{margin-top:.4rem}.subnav,.actions,.choices,.chunks{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.subnav{margin-bottom:10px}.actions{margin-top:10px}.choices button[aria-pressed=true]{background:#f0d8b7;border-color:#895331;box-shadow:inset 0 -2px #895331}.choices button.correct{background:var(--green-bg);border-color:var(--green);color:var(--green)}.choices button.wrong{background:var(--red-bg);border-color:var(--red);color:var(--red)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;table-layout:fixed;overflow-wrap:anywhere} th,td{padding:.46rem .52rem;vertical-align:top;border-bottom:1px solid #e3d2bc;text-align:left} th{color:var(--brown);background:var(--sand)} .explanation{margin-top:13px}.explanation h3{margin-top:12px}.explanation table{margin-top:6px}.result{font-weight:700;margin-top:9px}.positive{color:var(--green)}.negative{color:var(--red)}.evidence-box{background:var(--green-bg);color:var(--green);border-left:3px solid var(--green);padding:.65rem .72rem;margin:.55rem 0}.evidence-box.info{background:#f3e6d1;color:var(--muted);border-color:#9d7757}.evidence-box p+p{margin-top:.48rem}.note-toggle{margin-top:13px} summary{cursor:pointer;font-weight:700;color:var(--brown)}details{margin-top:11px} details[open]>summary{margin-bottom:8px}
+.exercise{display:grid;gap:9px}.exercise label{display:grid;gap:4px}.exercise select{max-width:100%;width:100%;white-space:normal}.exercise fieldset{min-width:0;border:1px solid var(--line);border-radius:9px;margin:0;padding:.65rem}.exercise legend{padding:0 .4rem;font-weight:700}.exercise .answer-line{margin-top:.24rem}.sentence{padding:clamp(15px,3vw,32px)}.sentence-top{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}.sentence-top select{max-width:100%}.hint-head{display:flex;align-items:center;gap:8px;justify-content:space-between}.hint p{margin-top:.35rem}.listen-control{margin:.7rem 0}.sentence .answer-zone{display:flex;gap:7px;flex-wrap:wrap;min-height:74px;border:2px dashed #b39579;border-radius:10px;background:#fff8ec;padding:10px;margin:.75rem 0;align-items:center}.sentence .answer-zone.solved{border-color:#58826a;background:#e2efe4}.sentence .chunks button,.answer-zone button{text-align:left}.sentence .answer-zone button{background:#f5e2c5}.sentence .chunks button:first-letter{text-transform:none}.sentence .answer-preview{margin-top:.6rem;padding:9px;background:#e4efe5;border-radius:8px;color:var(--green)}.results-table button{padding:.19rem .48rem}.notes{width:100%;min-height:70px;border:1px solid var(--line);border-radius:7px;padding:8px;background:var(--paper);color:var(--ink)}.mode-title{margin-bottom:.46rem}
+footer{text-align:center;font-size:.86rem;color:#e8cdb4;margin-top:18px;border-top:1px solid #624433;padding:13px 0 16px}.footer-brand{font-weight:750;margin-right:10px}
+@media(max-width:780px){.split{grid-template-columns:1fr;gap:8px}.pane{height:auto;min-height:0}.pane:first-child .scroll{max-height:49vh}.pane:nth-child(2) .scroll{max-height:none}.en-copy,.vi-copy{text-align:left}.hero.with-cover{grid-template-columns:1fr}.hero img{max-height:155px}.bar .spacer{display:none}.bar button{flex:none}.pane-head{padding:8px 12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="hero" id="hero"><div class="hero-copy"><span class="brand">ABHI-UYEN · IELTS READING</span><h1>Research Using Twins</h1><p>Reading Passage 1 · Questions 1–4</p></div></header>
+<nav class="main-nav" aria-label="Learning modes">
+<button data-mode="home" aria-pressed="true">Home</button><button data-mode="coll" aria-pressed="false">Collocations</button><button data-mode="sentence" aria-pressed="false">Sentence</button><button data-mode="practice" aria-pressed="false">Practice</button>
+<span class="spacer"></span><button id="reset" hidden>Reset</button>
+</nav>
+<div id="player" class="player"><label for="reading-audio">Listen to the passage</label><audio id="reading-audio" controls preload="metadata" src="./reading.mp3"></audio><button id="stop-all">Stop</button><label for="rate">Speed</label><select id="rate"><option value=".75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option></select><span id="audio-error" class="negative" role="status"></span></div>
+<main id="main"></main>
+<noscript><div class="home-reader card">Enable JavaScript to open the passage and exercises.</div></noscript>
+<footer><span class="footer-brand">Designed by Abhi-Uyen</span>Practice makes perfect</footer>
+</div>
+<script id="lesson-data" type="application/json">{"paragraphs": [{"name": "Nature and Nurture", "en": "To biomedical researchers all over the world, twins offer a precious opportunity to untangle the influence of genes and the environment – of nature and nurture. Because identical twins come from a single fertilized egg that splits into two, they share virtually the same genetic code. Any differences between them – one twin having younger looking skin, for example – must be due to environmental factors such as less time spent in the sun.", "vi": "Đối với các nhà nghiên cứu y sinh trên khắp thế giới, các cặp sinh đôi mang lại một cơ hội quý giá để làm sáng tỏ và phân tách ảnh hưởng của gen và môi trường – tức là ảnh hưởng của yếu tố bẩm sinh và sự nuôi dưỡng. Vì các cặp sinh đôi cùng trứng phát triển từ một trứng đã được thụ tinh rồi phân chia thành hai, nên họ có mã di truyền gần như giống hệt nhau. Bất kỳ sự khác biệt nào giữa họ – chẳng hạn như một người có làn da trông trẻ hơn – đều phải bắt nguồn từ các yếu tố môi trường, ví dụ như việc ít tiếp xúc với ánh nắng mặt trời hơn.", "phrases": [{"key": "biomedical researchers", "meaning": "các nhà nghiên cứu y sinh", "loc": [3, 25]}, {"key": "all over the world", "meaning": "trên khắp thế giới", "loc": [26, 44]}, {"key": "offer a precious opportunity", "meaning": "mang lại một cơ hội quý giá", "loc": [52, 80]}, {"key": "untangle the influence of", "meaning": "làm sáng tỏ và phân tách ảnh hưởng của", "loc": [84, 109]}, {"key": "nature and nurture", "meaning": "yếu tố bẩm sinh và sự nuôi dưỡng", "loc": [141, 159]}, {"key": "identical twins", "meaning": "các cặp sinh đôi cùng trứng", "loc": [169, 184]}, {"key": "a single fertilized egg", "meaning": "một trứng đã được thụ tinh", "loc": [195, 218]}, {"key": "split into two", "meaning": "phân chia thành hai", "loc": [224, 239]}, {"key": "share the same genetic code", "meaning": "có chung mã di truyền", "loc": [246, 283]}, {"key": "virtually the same", "meaning": "gần như giống hệt nhau", "loc": [252, 270]}, {"key": "younger looking skin", "meaning": "làn da trông trẻ hơn", "loc": [332, 352]}, {"key": "be due to environmental factors", "meaning": "bắt nguồn từ các yếu tố môi trường", "loc": [373, 404]}, {"key": "spend time in the sun", "meaning": "dành thời gian tiếp xúc với ánh nắng", "loc": [418, 439]}], "notes": ["**offer a precious opportunity to do something**", "\\= provide a valuable opportunity to do something", "Studying abroad **offers a precious opportunity to gain** exposure to different cultures.", "*Du học mang lại cơ hội quý giá để tiếp xúc với các nền văn hóa khác nhau.*", "**untangle the influence of A and B**", "Làm sáng tỏ và phân biệt những ảnh hưởng đan xen của A và B.", "Researchers are trying to **untangle the influence of** social media and peer pressure on teenagers' behaviour.", "*Các nhà nghiên cứu đang cố gắng phân biệt ảnh hưởng của mạng xã hội và áp lực đồng trang lứa đối với hành vi của thanh thiếu niên.*"], "sentences": [{"en": "To biomedical researchers all over the world, twins offer a precious opportunity to untangle the influence of genes and the environment – of nature and nurture.", "vi": "Đối với các nhà nghiên cứu y sinh trên khắp thế giới, các cặp sinh đôi mang lại một cơ hội quý giá để làm sáng tỏ và phân tách ảnh hưởng của gen và môi trường – tức là ảnh hưởng của yếu tố bẩm sinh và sự nuôi dưỡng.", "time": [2.57, 13.61], "chunks": ["To biomedical researchers all over the world,", "twins offer a precious opportunity", "to untangle the influence of", "genes and the environment", "– of nature and nurture."]}, {"en": "Because identical twins come from a single fertilized egg that splits into two, they share virtually the same genetic code.", "vi": "Vì các cặp sinh đôi cùng trứng phát triển từ một trứng đã được thụ tinh rồi phân chia thành hai, nên họ có mã di truyền gần như giống hệt nhau.", "time": [14.51, 22.44], "chunks": ["Because identical twins come from a single fertilized egg", "that splits into two,", "they share virtually the same genetic code."]}, {"en": "Any differences between them – one twin having younger looking skin, for example – must be due to environmental factors such as less time spent in the sun.", "vi": "Bất kỳ sự khác biệt nào giữa họ – chẳng hạn như một người có làn da trông trẻ hơn – đều phải bắt nguồn từ các yếu tố môi trường, ví dụ như việc ít tiếp xúc với ánh nắng mặt trời hơn.", "time": [23.18, 33.12], "chunks": ["Any differences between them", "– one twin having younger looking skin, for example –", "must be due to environmental factors", "such as less time spent in the sun."]}]}, {"name": "Genetic Influence on Human Life", "en": "Alternatively, by comparing the experiences of identical twins with those of fraternal twins, who come from separate eggs and share on average half their DNA, researchers can quantify the extent to which our genes affect our lives. If identical twins are more similar to each other with respect to an ailment than fraternal twins are, then vulnerability to the disease must be rooted at least in part in heredity.", "vi": "Ngoài ra, bằng cách so sánh những trải nghiệm của các cặp sinh đôi cùng trứng với những trải nghiệm của các cặp sinh đôi khác trứng – những người phát triển từ các trứng riêng biệt và có trung bình một nửa lượng DNA giống nhau – các nhà nghiên cứu có thể định lượng mức độ mà gen ảnh hưởng đến cuộc sống của chúng ta. Nếu các cặp sinh đôi cùng trứng có mức độ tương đồng với nhau về một căn bệnh cao hơn so với các cặp sinh đôi khác trứng, thì khả năng dễ mắc căn bệnh đó ít nhất một phần phải bắt nguồn từ yếu tố di truyền.", "phrases": [{"key": "alternatively", "meaning": "theo một cách khác, ngoài ra", "loc": [0, 13]}, {"key": "compare A with B", "meaning": "so sánh A với B", "loc": [18, 92]}, {"key": "fraternal twins", "meaning": "các cặp sinh đôi khác trứng", "loc": [77, 92]}, {"key": "come from separate eggs", "meaning": "phát triển từ các trứng riêng biệt", "loc": [98, 121]}, {"key": "on average", "meaning": "trung bình", "loc": [132, 142]}, {"key": "quantify the extent to which", "meaning": "định lượng mức độ mà", "loc": [175, 203]}, {"key": "genes affect our lives", "meaning": "gen ảnh hưởng đến cuộc sống của chúng ta", "loc": [208, 230]}, {"key": "be similar to each other", "meaning": "tương đồng với nhau", "loc": [255, 281]}, {"key": "with respect to", "meaning": "xét về, liên quan đến", "loc": [282, 297]}, {"key": "an ailment", "meaning": "một căn bệnh", "loc": [298, 308]}, {"key": "vulnerability to disease", "meaning": "khả năng dễ mắc bệnh", "loc": [340, 368]}, {"key": "be rooted in heredity", "meaning": "bắt nguồn từ yếu tố di truyền", "loc": [374, 412]}, {"key": "at least in part", "meaning": "ít nhất một phần", "loc": [384, 400]}], "notes": ["**quantify the extent to which + S + V**", "\\= measure the degree to which + S + V", "Định lượng mức độ mà một yếu tố ảnh hưởng đến một vấn đề.", "It is difficult to **quantify the extent to which** advertising influences consumer behaviour.", "*Rất khó định lượng mức độ mà quảng cáo ảnh hưởng đến hành vi của người tiêu dùng.*", "**be rooted in something**", "\\= stem from something / have its origins in something", "Social inequality is often **rooted in** economic disparities and unequal access to education.", "*Bất bình đẳng xã hội thường bắt nguồn từ sự chênh lệch kinh tế và khả năng tiếp cận giáo dục không đồng đều.*", "**vulnerability to something**", "- vulnerability to disease: khả năng dễ mắc bệnh\n- vulnerability to exploitation: tình trạng dễ bị bóc lột\n- vulnerability to natural disasters: mức độ dễ bị tổn thương trước thiên tai"], "sentences": [{"en": "Alternatively, by comparing the experiences of identical twins with those of fraternal twins, who come from separate eggs and share on average half their DNA, researchers can quantify the extent to which our genes affect our lives.", "vi": "Ngoài ra, bằng cách so sánh những trải nghiệm của các cặp sinh đôi cùng trứng với những trải nghiệm của các cặp sinh đôi khác trứng – những người phát triển từ các trứng riêng biệt và có trung bình một nửa lượng DNA giống nhau – các nhà nghiên cứu có thể định lượng mức độ mà gen ảnh hưởng đến cuộc sống của chúng ta.", "time": [35.79, 50.43], "chunks": ["Alternatively, by comparing the experiences of identical twins", "with those of fraternal twins,", "who come from separate eggs", "and share on average half their DNA,", "researchers can quantify the extent to which", "our genes affect our lives."]}, {"en": "If identical twins are more similar to each other with respect to an ailment than fraternal twins are, then vulnerability to the disease must be rooted at least in part in heredity.", "vi": "Nếu các cặp sinh đôi cùng trứng có mức độ tương đồng với nhau về một căn bệnh cao hơn so với các cặp sinh đôi khác trứng, thì khả năng dễ mắc căn bệnh đó ít nhất một phần phải bắt nguồn từ yếu tố di truyền.", "time": [51.31, 62.28], "chunks": ["If identical twins are more similar to each other", "with respect to an ailment", "than fraternal twins are,", "then vulnerability to the disease", "must be rooted at least in part in heredity."]}]}, {"name": "The Interplay of Nature and Nurture", "en": "These two lines of research – studying the differences between identical twins to pinpoint the influence of environment, and comparing identical twins with fraternal ones to measure the role of inheritance – have been crucial to understanding the interplay of nature and nurture in determining our personalities, behavior, and vulnerability to disease.", "vi": "Hai hướng nghiên cứu này – nghiên cứu sự khác biệt giữa các cặp sinh đôi cùng trứng để xác định chính xác ảnh hưởng của môi trường, và so sánh các cặp sinh đôi cùng trứng với các cặp sinh đôi khác trứng để đo lường vai trò của sự di truyền – đã đóng vai trò vô cùng quan trọng trong việc tìm hiểu sự tương tác giữa yếu tố bẩm sinh và sự nuôi dưỡng trong quá trình quyết định tính cách, hành vi và khả năng dễ mắc bệnh của chúng ta.", "phrases": [{"key": "lines of research", "meaning": "các hướng nghiên cứu", "loc": [10, 27]}, {"key": "study the differences between", "meaning": "nghiên cứu sự khác biệt giữa", "loc": [30, 62]}, {"key": "pinpoint the influence of", "meaning": "xác định chính xác ảnh hưởng của", "loc": [82, 107]}, {"key": "measure the role of inheritance", "meaning": "đo lường vai trò của sự di truyền", "loc": [174, 205]}, {"key": "be crucial to understanding", "meaning": "có vai trò thiết yếu đối với việc tìm hiểu", "loc": [208, 242]}, {"key": "the interplay of nature and nurture", "meaning": "sự tương tác giữa yếu tố bẩm sinh và sự nuôi dưỡng", "loc": [243, 278]}, {"key": "determine our personalities", "meaning": "quyết định tính cách của chúng ta", "loc": [282, 311]}, {"key": "vulnerability to disease", "meaning": "khả năng dễ mắc bệnh", "loc": [327, 351]}], "notes": ["**pinpoint the influence of something**", "\\= identify the precise influence of something", "Xác định chính xác tác động của một yếu tố.", "It is challenging to **pinpoint the influence of** parental upbringing on children's academic performance.", "*Việc xác định chính xác ảnh hưởng của cách nuôi dạy con cái đối với thành tích học tập của trẻ là một thách thức.*", "**be crucial to + noun / V-ing**", "\\= be essential to / be vital to", "Public awareness **is crucial to addressing** environmental problems.", "*Nhận thức của cộng đồng đóng vai trò thiết yếu trong việc giải quyết các vấn đề môi trường.*", "**the interplay between A and B**", "\\= the interaction between A and B", "Human behaviour is shaped by **the interplay between** biological, psychological and social factors.", "*Hành vi của con người được định hình bởi sự tương tác giữa các yếu tố sinh học, tâm lý và xã hội.*", "**Two lines of research**", "**RESEARCH 1**", "Differences between identical twins", "Pinpoint environmental influences", "Ảnh hưởng của môi trường", "**RESEARCH 2**", "Identical vs. fraternal twins", "Measure genetic influences", "Ảnh hưởng của di truyền", "**Understand the interplay of nature and nurture**", "Tìm hiểu sự tương tác giữa yếu tố bẩm sinh và môi trường nuôi dưỡng"], "sentences": [{"en": "These two lines of research – studying the differences between identical twins to pinpoint the influence of environment, and comparing identical twins with fraternal ones to measure the role of inheritance – have been crucial to understanding the interplay of nature and nurture in determining our personalities, behavior, and vulnerability to disease.", "vi": "Hai hướng nghiên cứu này – nghiên cứu sự khác biệt giữa các cặp sinh đôi cùng trứng để xác định chính xác ảnh hưởng của môi trường, và so sánh các cặp sinh đôi cùng trứng với các cặp sinh đôi khác trứng để đo lường vai trò của sự di truyền – đã đóng vai trò vô cùng quan trọng trong việc tìm hiểu sự tương tác giữa yếu tố bẩm sinh và sự nuôi dưỡng trong quá trình quyết định tính cách, hành vi và khả năng dễ mắc bệnh của chúng ta.", "time": [64.93, 85.58], "chunks": ["These two lines of research", "– studying the differences between identical twins", "to pinpoint the influence of environment,", "and comparing identical twins with fraternal ones", "to measure the role of inheritance –", "have been crucial to understanding the interplay of nature and nurture", "in determining our personalities, behavior, and vulnerability to disease."]}]}, {"name": "The History of Twin Studies", "en": "The idea of using twins to measure the influence of heredity dates back to 1875, when the English scientist Francis Galton first suggested the approach (and coined the phrase ‘nature and nurture’). But twin studies took a surprising twist in the 1980s, with the arrival of studies into identical twins who had been separated at birth and reunited as adults. Over two decades 137 sets of twins eventually visited Thomas Bouchard’s lab in what became known as the Minnesota Study of Twins Reared Apart. Numerous tests were carried out on the twins, and they were each asked more than 15,000 questions.", "vi": "Ý tưởng sử dụng các cặp sinh đôi để đo lường ảnh hưởng của sự di truyền có từ năm 1875, khi nhà khoa học người Anh Francis Galton lần đầu tiên đề xuất phương pháp này và đặt ra cụm từ “yếu tố bẩm sinh và sự nuôi dưỡng”. Tuy nhiên, các nghiên cứu về sinh đôi đã có một bước ngoặt bất ngờ vào những năm 1980, với sự xuất hiện của những nghiên cứu về các cặp sinh đôi cùng trứng đã bị chia tách từ khi mới sinh và được đoàn tụ khi trưởng thành. Trong khoảng thời gian hai thập kỷ, tổng cộng 137 cặp sinh đôi cuối cùng đã đến phòng thí nghiệm của Thomas Bouchard để tham gia chương trình nghiên cứu mà sau này được biết đến với tên gọi Nghiên cứu Minnesota về các cặp sinh đôi được nuôi dưỡng riêng biệt. Nhiều bài kiểm tra đã được thực hiện đối với những người sinh đôi và mỗi người được hỏi hơn 15.000 câu hỏi.", "phrases": [{"key": "measure the influence of heredity", "meaning": "đo lường ảnh hưởng của sự di truyền", "loc": [27, 60]}, {"key": "date back to", "meaning": "có nguồn gốc từ, có từ", "loc": [61, 74]}, {"key": "suggest an approach", "meaning": "đề xuất một phương pháp", "loc": [129, 151]}, {"key": "coin a phrase", "meaning": "đặt ra một cụm từ mới", "loc": [157, 174]}, {"key": "take a surprising twist", "meaning": "có một bước ngoặt bất ngờ", "loc": [215, 238]}, {"key": "the arrival of", "meaning": "sự xuất hiện của", "loc": [258, 272]}, {"key": "studies into something", "meaning": "các nghiên cứu về vấn đề gì", "loc": [273, 301]}, {"key": "be separated at birth", "meaning": "bị chia tách từ khi mới sinh", "loc": [310, 333]}, {"key": "be reunited as adults", "meaning": "được đoàn tụ khi trưởng thành", "loc": [338, 356]}, {"key": "over two decades", "meaning": "trong khoảng thời gian hai thập kỷ", "loc": [358, 374]}, {"key": "sets of twins", "meaning": "các cặp sinh đôi", "loc": [379, 392]}, {"key": "become known as", "meaning": "được biết đến với tên gọi", "loc": [442, 457]}, {"key": "be reared apart", "meaning": "được nuôi dưỡng riêng biệt", "loc": [487, 499]}, {"key": "carry out numerous tests", "meaning": "tiến hành nhiều bài kiểm tra", "loc": [501, 532]}], "notes": ["**date back to + time**", "\\= originate in / have its origins in", "This traditional practice **dates back to** the nineteenth century.", "*Tập tục truyền thống này có nguồn gốc từ thế kỷ XIX.*", "**coin a phrase / coin a term**", "Sáng tạo hoặc đặt ra một cụm từ, thuật ngữ mới.", "The term was **coined** to describe a new social phenomenon.", "*Thuật ngữ này được đặt ra để mô tả một hiện tượng xã hội mới.*", "**take a surprising twist**", "\\= take an unexpected turn", "The situation **took a surprising twist** when new evidence emerged.", "*Tình hình có một bước ngoặt bất ngờ khi bằng chứng mới xuất hiện.*", "**carry out research / tests / experiments**", "\\= conduct research / tests / experiments", "Scientists have **carried out numerous experiments** to examine the effects of sleep deprivation.", "*Các nhà khoa học đã tiến hành nhiều thí nghiệm để nghiên cứu tác động của tình trạng thiếu ngủ.*"], "sentences": [{"en": "The idea of using twins to measure the influence of heredity dates back to 1875, when the English scientist Francis Galton first suggested the approach (and coined the phrase ‘nature and nurture’).", "vi": "Ý tưởng sử dụng các cặp sinh đôi để đo lường ảnh hưởng của sự di truyền có từ năm 1875, khi nhà khoa học người Anh Francis Galton lần đầu tiên đề xuất phương pháp này và đặt ra cụm từ “yếu tố bẩm sinh và sự nuôi dưỡng”.", "time": [88.48, 101.47], "chunks": ["The idea of using twins to measure the influence of heredity", "dates back to 1875,", "when the English scientist Francis Galton first suggested the approach", "(and coined the phrase ‘nature and nurture’)."]}, {"en": "But twin studies took a surprising twist in the 1980s, with the arrival of studies into identical twins who had been separated at birth and reunited as adults.", "vi": "Tuy nhiên, các nghiên cứu về sinh đôi đã có một bước ngoặt bất ngờ vào những năm 1980, với sự xuất hiện của những nghiên cứu về các cặp sinh đôi cùng trứng đã bị chia tách từ khi mới sinh và được đoàn tụ khi trưởng thành.", "time": [102.08, 112.35], "chunks": ["But twin studies took a surprising twist", "in the 1980s,", "with the arrival of studies into identical twins", "who had been separated at birth", "and reunited as adults."]}, {"en": "Over two decades 137 sets of twins eventually visited Thomas Bouchard’s lab in what became known as the Minnesota Study of Twins Reared Apart.", "vi": "Trong khoảng thời gian hai thập kỷ, tổng cộng 137 cặp sinh đôi cuối cùng đã đến phòng thí nghiệm của Thomas Bouchard để tham gia chương trình nghiên cứu mà sau này được biết đến với tên gọi Nghiên cứu Minnesota về các cặp sinh đôi được nuôi dưỡng riêng biệt.", "time": [113.38, 123.14], "chunks": ["Over two decades", "137 sets of twins eventually visited Thomas Bouchard’s lab", "in what became known as", "the Minnesota Study of Twins Reared Apart."]}, {"en": "Numerous tests were carried out on the twins, and they were each asked more than 15,000 questions.", "vi": "Nhiều bài kiểm tra đã được thực hiện đối với những người sinh đôi và mỗi người được hỏi hơn 15.000 câu hỏi.", "time": [124.08, 131.41], "chunks": ["Numerous tests were carried out on the twins,", "and they were each asked", "more than 15,000 questions."]}]}, {"name": "Heritability and Genetic Makeup", "en": "Bouchard and his colleagues used this mountain of data to identify how far twins were affected by their genetic makeup. The key to their approach was a statistical concept called heritability. In broad terms, the heritability of a trait measures the extent to which differences among members of a population can be explained by differences in their genetics. And wherever Bouchard and other scientists looked, it seemed, they found the invisible hand of genetic influence helping to shape our lives.", "vi": "Bouchard và các đồng nghiệp của ông đã sử dụng khối lượng dữ liệu khổng lồ này để xác định mức độ mà những người sinh đôi chịu ảnh hưởng bởi cấu tạo di truyền của họ. Yếu tố then chốt trong phương pháp nghiên cứu của họ là một khái niệm thống kê được gọi là hệ số di truyền. Nói một cách khái quát, hệ số di truyền của một đặc điểm đo lường mức độ mà sự khác biệt giữa các cá thể trong một quần thể có thể được giải thích bằng những khác biệt về yếu tố di truyền của họ. Và dường như bất cứ nơi nào Bouchard cùng các nhà khoa học khác tiến hành nghiên cứu, họ đều nhận thấy bàn tay vô hình của ảnh hưởng di truyền đang góp phần định hình cuộc sống của chúng ta.", "phrases": [{"key": "a mountain of data", "meaning": "một khối lượng dữ liệu khổng lồ", "loc": [33, 54]}, {"key": "identify how far", "meaning": "xác định mức độ mà", "loc": [58, 74]}, {"key": "be affected by", "meaning": "chịu ảnh hưởng bởi", "loc": [81, 97]}, {"key": "genetic makeup", "meaning": "cấu tạo di truyền", "loc": [104, 118]}, {"key": "the key to an approach", "meaning": "yếu tố then chốt của một phương pháp", "loc": [120, 145]}, {"key": "a statistical concept", "meaning": "một khái niệm thống kê", "loc": [150, 171]}, {"key": "heritability", "meaning": "hệ số di truyền", "loc": [179, 191]}, {"key": "in broad terms", "meaning": "nói một cách khái quát", "loc": [193, 207]}, {"key": "the heritability of a trait", "meaning": "hệ số di truyền của một đặc điểm", "loc": [209, 236]}, {"key": "measure the extent to which", "meaning": "đo lường mức độ mà", "loc": [237, 265]}, {"key": "members of a population", "meaning": "các cá thể trong một quần thể", "loc": [284, 307]}, {"key": "be explained by", "meaning": "được giải thích bởi", "loc": [312, 327]}, {"key": "the invisible hand of", "meaning": "bàn tay vô hình của", "loc": [432, 453]}, {"key": "genetic influence", "meaning": "ảnh hưởng di truyền", "loc": [454, 471]}, {"key": "shape our lives", "meaning": "định hình cuộc sống của chúng ta", "loc": [483, 498]}], "notes": ["**a mountain of data**", "\\= a vast amount of data / an enormous volume of data", "Researchers collected **a mountain of data** from surveys and interviews.", "*Các nhà nghiên cứu đã thu thập một khối lượng dữ liệu khổng lồ từ các cuộc khảo sát và phỏng vấn.*", "**the key to something**", "Yếu tố then chốt dẫn đến một kết quả.", "**The key to achieving** sustainable development is balancing economic growth with environmental protection.", "*Yếu tố then chốt để đạt được sự phát triển bền vững là cân bằng tăng trưởng kinh tế với bảo vệ môi trường.*", "**in broad terms**", "\\= generally speaking / broadly speaking", "**In broad terms**, technological advancement has transformed the way people communicate.", "*Nói một cách khái quát, tiến bộ công nghệ đã làm thay đổi cách con người giao tiếp.*", "**shape something**", "Mang nghĩa bóng là định hình, tạo ảnh hưởng đối với quá trình phát triển.", "- shape public opinion: định hình dư luận xã hội\n- shape consumer behaviour: định hình hành vi tiêu dùng\n- shape cultural identity: định hình bản sắc văn hóa\n- shape children's personalities: định hình tính cách của trẻ\n- shape future generations: định hình các thế hệ tương lai"], "sentences": [{"en": "Bouchard and his colleagues used this mountain of data to identify how far twins were affected by their genetic makeup.", "vi": "Bouchard và các đồng nghiệp của ông đã sử dụng khối lượng dữ liệu khổng lồ này để xác định mức độ mà những người sinh đôi chịu ảnh hưởng bởi cấu tạo di truyền của họ.", "time": [132.19, 139.76], "chunks": ["Bouchard and his colleagues used", "this mountain of data", "to identify how far twins", "were affected by their genetic makeup."]}, {"en": "The key to their approach was a statistical concept called heritability.", "vi": "Yếu tố then chốt trong phương pháp nghiên cứu của họ là một khái niệm thống kê được gọi là hệ số di truyền.", "time": [140.33, 145.03], "chunks": ["The key to their approach", "was a statistical concept", "called heritability."]}, {"en": "In broad terms, the heritability of a trait measures the extent to which differences among members of a population can be explained by differences in their genetics.", "vi": "Nói một cách khái quát, hệ số di truyền của một đặc điểm đo lường mức độ mà sự khác biệt giữa các cá thể trong một quần thể có thể được giải thích bằng những khác biệt về yếu tố di truyền của họ.", "time": [145.6, 155.12], "chunks": ["In broad terms,", "the heritability of a trait", "measures the extent to which", "differences among members of a population", "can be explained by differences in their genetics."]}, {"en": "And wherever Bouchard and other scientists looked, it seemed, they found the invisible hand of genetic influence helping to shape our lives.", "vi": "Và dường như bất cứ nơi nào Bouchard cùng các nhà khoa học khác tiến hành nghiên cứu, họ đều nhận thấy bàn tay vô hình của ảnh hưởng di truyền đang góp phần định hình cuộc sống của chúng ta.", "time": [155.64, 164.49], "chunks": ["And wherever Bouchard and other scientists looked,", "it seemed,", "they found the invisible hand of genetic influence", "helping to shape our lives."]}]}, {"name": "The Emergence of Epigenetics", "en": "Lately, however, twin studies have helped lead scientists to a radical new conclusion: that nature and nurture are not the only elemental forces at work. According to a recent field called epigenetics, there is a third factor also in play, one that in some cases serves as a bridge between the environment and our genes, and in others operates on its own to shape who we are.", "vi": "Tuy nhiên, gần đây, các nghiên cứu về sinh đôi đã giúp các nhà khoa học đi đến một kết luận hoàn toàn mới, mang tính đột phá: yếu tố bẩm sinh và sự nuôi dưỡng không phải là những yếu tố cơ bản duy nhất đang tác động đến chúng ta. Theo một lĩnh vực nghiên cứu tương đối mới được gọi là biểu sinh học, còn có một yếu tố thứ ba đang tham gia vào quá trình này. Trong một số trường hợp, yếu tố đó đóng vai trò là cầu nối giữa môi trường và gen của chúng ta; trong những trường hợp khác, nó hoạt động độc lập để định hình con người chúng ta.", "phrases": [{"key": "lately", "meaning": "gần đây", "loc": [0, 6]}, {"key": "lead someone to a conclusion", "meaning": "khiến ai đi đến một kết luận", "loc": [42, 85]}, {"key": "a radical new conclusion", "meaning": "một kết luận hoàn toàn mới, mang tính đột phá", "loc": [61, 85]}, {"key": "elemental forces", "meaning": "những yếu tố tác động cơ bản", "loc": [128, 144]}, {"key": "be at work", "meaning": "đang hoạt động, đang tác động", "loc": [145, 152]}, {"key": "a recent field", "meaning": "một lĩnh vực nghiên cứu tương đối mới", "loc": [167, 181]}, {"key": "epigenetics", "meaning": "biểu sinh học", "loc": [189, 200]}, {"key": "a third factor in play", "meaning": "một yếu tố thứ ba đang tham gia tác động", "loc": [211, 238]}, {"key": "in some cases", "meaning": "trong một số trường hợp", "loc": [249, 262]}, {"key": "serve as a bridge between", "meaning": "đóng vai trò cầu nối giữa", "loc": [263, 289]}, {"key": "in others", "meaning": "trong những trường hợp khác", "loc": [325, 334]}, {"key": "operate on its own", "meaning": "hoạt động độc lập", "loc": [335, 354]}, {"key": "shape who we are", "meaning": "định hình con người chúng ta", "loc": [358, 374]}], "notes": ["**lead someone to a conclusion**", "The findings **led researchers to the conclusion that** social isolation can negatively affect mental health.", "*Những phát hiện này khiến các nhà nghiên cứu đi đến kết luận rằng sự cô lập xã hội có thể ảnh hưởng tiêu cực đến sức khỏe tinh thần.*", "**factors at work / factors in play**", "Những yếu tố đang tác động đến một tình huống hoặc kết quả.", "There are several economic and social **factors at work** behind rising unemployment.", "*Có một số yếu tố kinh tế và xã hội đang tác động đến tình trạng thất nghiệp gia tăng.*", "**serve as a bridge between A and B**", "\\= act as a link between A and B", "Education can **serve as a bridge between** different cultures.", "*Giáo dục có thể đóng vai trò là cầu nối giữa các nền văn hóa khác nhau.*", "**operate on its own**", "\\= function independently", "An effective system should be able to **operate on its own** without constant human intervention.", "*Một hệ thống hiệu quả cần có khả năng hoạt động độc lập mà không cần sự can thiệp liên tục của con người.*", "**Understanding the concept**", "Minh họa vai trò kết nối của biểu sinh học theo nội dung đoạn văn."], "sentences": [{"en": "Lately, however, twin studies have helped lead scientists to a radical new conclusion: that nature and nurture are not the only elemental forces at work.", "vi": "Tuy nhiên, gần đây, các nghiên cứu về sinh đôi đã giúp các nhà khoa học đi đến một kết luận hoàn toàn mới, mang tính đột phá: yếu tố bẩm sinh và sự nuôi dưỡng không phải là những yếu tố cơ bản duy nhất đang tác động đến chúng ta.", "time": [167.7, 177.65], "chunks": ["Lately, however,", "twin studies have helped", "lead scientists to a radical new conclusion:", "that nature and nurture are not the only elemental forces at work."]}, {"en": "According to a recent field called epigenetics, there is a third factor also in play, one that in some cases serves as a bridge between the environment and our genes, and in others operates on its own to shape who we are.", "vi": "Theo một lĩnh vực nghiên cứu tương đối mới được gọi là biểu sinh học, còn có một yếu tố thứ ba đang tham gia vào quá trình này. Trong một số trường hợp, yếu tố đó đóng vai trò là cầu nối giữa môi trường và gen của chúng ta; trong những trường hợp khác, nó hoạt động độc lập để định hình con người chúng ta.", "time": [178.27, 191.9], "chunks": ["According to a recent field called epigenetics,", "there is a third factor also in play,", "one that in some cases", "serves as a bridge between the environment and our genes,", "and in others operates on its own", "to shape who we are."]}]}, {"name": "How Epigenetic Processes Work", "en": "Epigenetic processes are chemical reactions tied to neither nature nor nurture but representing what researchers have called a ‘third component’. These reactions influence how our genetic code is expressed: how each gene is strengthened or weakened, even turned on or off, to build our bones, brains and all the other parts of our bodies.", "vi": "Các quá trình biểu sinh là những phản ứng hóa học không gắn với cả yếu tố bẩm sinh lẫn sự nuôi dưỡng, mà đại diện cho điều mà các nhà nghiên cứu gọi là “thành phần thứ ba”. Những phản ứng này ảnh hưởng đến cách mã di truyền của chúng ta được biểu hiện: cách hoạt động của từng gen được tăng cường hoặc suy giảm, thậm chí được kích hoạt hoặc bất hoạt, để hình thành xương, não bộ và tất cả các bộ phận khác trên cơ thể chúng ta.", "phrases": [{"key": "epigenetic processes", "meaning": "các quá trình biểu sinh", "loc": [0, 20]}, {"key": "chemical reactions", "meaning": "các phản ứng hóa học", "loc": [25, 43]}, {"key": "be tied to", "meaning": "có liên hệ với, gắn với", "loc": [44, 51]}, {"key": "neither A nor B", "meaning": "không A cũng không B", "loc": [52, 78]}, {"key": "represent a third component", "meaning": "đại diện cho một thành phần thứ ba", "loc": [83, 144]}, {"key": "influence how something is expressed", "meaning": "ảnh hưởng đến cách một yếu tố được biểu hiện", "loc": [162, 205]}, {"key": "genetic code", "meaning": "mã di truyền", "loc": [180, 192]}, {"key": "gene expression", "meaning": "sự biểu hiện gen", "loc": [172, 205]}, {"key": "strengthen or weaken", "meaning": "tăng cường hoặc làm suy yếu", "loc": [224, 248]}, {"key": "turn a gene on or off", "meaning": "kích hoạt hoặc bất hoạt một gen", "loc": [255, 271]}, {"key": "parts of our bodies", "meaning": "các bộ phận trên cơ thể chúng ta", "loc": [318, 337]}], "notes": ["**be tied to something**", "\\= be closely linked to / be associated with", "Academic achievement is often **closely tied to** students' learning environments.", "*Thành tích học tập thường có mối liên hệ chặt chẽ với môi trường học tập của học sinh.*", "**neither A nor B**", "Phủ định đồng thời cả hai đối tượng hoặc hai yếu tố.", "The problem can be fully explained by **neither economic factors nor cultural differences**.", "*Không thể giải thích đầy đủ vấn đề chỉ bằng các yếu tố kinh tế hoặc sự khác biệt văn hóa.*", "**turn something on or off**", "Trong ngữ cảnh sinh học: kích hoạt hoặc bất hoạt.", "Certain biological mechanisms can **turn genes on or off**.", "*Một số cơ chế sinh học có thể kích hoạt hoặc bất hoạt các gen.*"], "sentences": [{"en": "Epigenetic processes are chemical reactions tied to neither nature nor nurture but representing what researchers have called a ‘third component’.", "vi": "Các quá trình biểu sinh là những phản ứng hóa học không gắn với cả yếu tố bẩm sinh lẫn sự nuôi dưỡng, mà đại diện cho điều mà các nhà nghiên cứu gọi là “thành phần thứ ba”.", "time": [195.18, 203.73], "chunks": ["Epigenetic processes are chemical reactions", "tied to neither nature nor nurture", "but representing what researchers have called a ‘third component’."]}, {"en": "These reactions influence how our genetic code is expressed: how each gene is strengthened or weakened, even turned on or off, to build our bones, brains and all the other parts of our bodies.", "vi": "Những phản ứng này ảnh hưởng đến cách mã di truyền của chúng ta được biểu hiện: cách hoạt động của từng gen được tăng cường hoặc suy giảm, thậm chí được kích hoạt hoặc bất hoạt, để hình thành xương, não bộ và tất cả các bộ phận khác trên cơ thể chúng ta.", "time": [204.32, 216.64], "chunks": ["These reactions influence how our genetic code is expressed:", "how each gene is strengthened or weakened,", "even turned on or off,", "to build our bones, brains and all the other parts of our bodies."]}]}], "questions": [{"stem": "There may be genetic causes for the differences in how young the skin of identical twins looks.", "vi": "Có thể có những nguyên nhân di truyền dẫn đến sự khác biệt về mức độ trẻ trung của làn da ở các cặp sinh đôi cùng trứng.", "key": "FALSE", "compare": [["identical twins", "identical twins"], ["differences in how young the skin looks", "one twin having younger looking skin"], ["genetic causes", "environmental factors (mâu thuẫn)"], ["there may be", "must be due to"]], "whyVI": "Câu hỏi cho rằng nguyên nhân có thể đến từ di truyền, trong khi bài đọc khẳng định nguyên nhân phải đến từ môi trường. Đây là sự mâu thuẫn trực tiếp về nguyên nhân (cause).", "whyEN": "The passage attributes the difference in skin appearance to environmental factors. The statement proposes a genetic cause for the same difference.", "evidence": ["Because identical twins come from a single fertilized egg that splits into two, they share virtually the same genetic code.", "Any differences between them – one twin having younger looking skin, for example – must be due to environmental factors such as less time spent in the sun."], "evidenceVI": "Vì các cặp sinh đôi cùng trứng phát triển từ một trứng đã được thụ tinh và phân chia thành hai, nên họ có mã di truyền gần như giống hệt nhau. Bất kỳ sự khác biệt nào giữa họ – chẳng hạn như một người có làn da trông trẻ hơn – đều phải do các yếu tố môi trường, ví dụ như ít tiếp xúc với ánh nắng mặt trời hơn.", "paragraph": 0, "vocab": [["identical twins", "cặp sinh đôi cùng trứng"], ["a fertilized egg", "trứng đã được thụ tinh"], ["share the same genetic code", "có chung mã di truyền"], ["virtually the same", "gần như giống hệt nhau"], ["genetic causes", "nguyên nhân di truyền"], ["environmental factors", "các yếu tố môi trường"], ["younger looking skin", "làn da trông trẻ hơn"], ["be due to something", "do, bắt nguồn từ điều gì"], ["spend time in the sun", "dành thời gian tiếp xúc với ánh nắng"]], "grammar": ["Must be due to + noun phrase – Diễn tả sự suy luận chắc chắn về nguyên nhân.", "The difference must be due to environmental factors.", "His poor performance must be due to a lack of preparation.", "The decline in productivity must be due to changes in working conditions."]}, {"stem": "Twins are at greater risk of developing certain illnesses than non-twins.", "vi": "Những người sinh đôi có nguy cơ mắc một số bệnh cao hơn những người không sinh đôi.", "key": "NOT GIVEN", "compare": [["twins vs non-twins", "identical twins vs fraternal twins"], ["twins", "identical twins"], ["non-twins", "Không được đề cập"], ["certain illnesses", "an ailment / the disease"], ["risk of developing illnesses", "vulnerability to the disease"], ["greater risk", "more similar to each other – không tương đương về nghĩa"]], "whyVI": "Đối tượng so sánh: Câu hỏi so sánh người sinh đôi với người không sinh đôi. Bài đọc so sánh sinh đôi cùng trứng với sinh đôi khác trứng. Tiêu chí so sánh: Câu hỏi nói về nguy cơ mắc bệnh cao hơn. Bài đọc nói về mức độ tương đồng liên quan đến một căn bệnh. Bài đọc không cung cấp thông tin để kết luận người sinh đôi có nguy cơ mắc bệnh cao hơn hay thấp hơn người không sinh đôi. Không đủ thông tin để xác nhận hoặc phủ nhận NOT GIVEN.", "whyEN": "The passage compares identical twins with fraternal twins. It gives no comparison between twins and non-twins.", "evidence": ["If identical twins are more similar to each other with respect to an ailment than fraternal twins are, then vulnerability to the disease must be rooted at least in part in heredity."], "evidenceVI": "Nếu các cặp sinh đôi cùng trứng có mức độ tương đồng với nhau về một căn bệnh cao hơn các cặp sinh đôi khác trứng, thì khả năng dễ mắc căn bệnh đó ít nhất một phần phải bắt nguồn từ yếu tố di truyền.", "paragraph": 1, "vocab": [["fraternal twins", "cặp sinh đôi khác trứng"], ["develop an illness", "mắc bệnh"], ["be at greater risk of", "có nguy cơ cao hơn"], ["vulnerability to disease", "khả năng dễ mắc bệnh"], ["with respect to", "xét về, liên quan đến"], ["an ailment", "một căn bệnh"], ["be rooted in", "bắt nguồn từ"], ["at least in part", "ít nhất một phần"], ["heredity", "sự di truyền"], ["quantify the extent to which", "định lượng mức độ mà"]], "grammar": ["Be at risk of + V-ing", "People who smoke are at greater risk of developing lung disease.", "Children from disadvantaged backgrounds may be at risk of falling behind academically.", "Endangered animals are at risk of becoming extinct.", "Be rooted in + noun phrase", "Vulnerability to the disease may be rooted in heredity.", "Social inequality is often rooted in economic disparities.", "Cultural prejudices may be rooted in historical misunderstandings."]}, {"stem": "Bouchard advertised in newspapers for twins who had been separated at birth.", "vi": "Bouchard đã đăng quảng cáo trên báo để tìm kiếm những cặp sinh đôi bị chia tách từ khi mới sinh.", "key": "NOT GIVEN", "compare": [["Bouchard", "Thomas Bouchard"], ["twins", "identical twins"], ["separated at birth", "separated at birth"], ["advertised in newspapers", "Không được đề cập"]], "whyVI": "Bài đọc cung cấp thông tin về đối tượng nghiên cứu, số lượng người tham gia và các hoạt động nghiên cứu. Tuy nhiên, bài đọc không nói Bouchard đã tìm kiếm những người tham gia bằng phương pháp nào. Việc đăng quảng cáo trên báo có thể đã xảy ra hoặc không xảy ra, nhưng chúng ta không được suy đoán dựa trên kiến thức bên ngoài bài đọc. Thông tin về phương thức tuyển chọn bị thiếu NOT GIVEN.", "whyEN": "The passage says that the twins visited Bouchard’s lab. It gives no information about whether he used newspaper advertisements to recruit them.", "evidence": ["But twin studies took a surprising twist in the 1980s, with the arrival of studies into identical twins who had been separated at birth and reunited as adults.", "Over two decades 137 sets of twins eventually visited Thomas Bouchard’s lab in what became known as the Minnesota Study of Twins Reared Apart.", "Numerous tests were carried out on the twins, and they were each asked more than 15,000 questions."], "evidenceVI": "Tuy nhiên, các nghiên cứu về sinh đôi đã có một bước ngoặt bất ngờ vào những năm 1980, với sự xuất hiện của những nghiên cứu về các cặp sinh đôi cùng trứng bị chia tách từ khi mới sinh và đoàn tụ khi trưởng thành. Trong khoảng hai thập kỷ, tổng cộng 137 cặp sinh đôi đã đến phòng thí nghiệm của Thomas Bouchard trong chương trình được biết đến với tên gọi Nghiên cứu Minnesota về các cặp sinh đôi được nuôi dưỡng riêng biệt. Nhiều bài kiểm tra đã được thực hiện đối với những người sinh đôi và mỗi người được hỏi hơn 15.000 câu hỏi.", "paragraph": 3, "vocab": [["date back to", "có nguồn gốc từ"], ["suggest an approach", "đề xuất một phương pháp"], ["coin a phrase", "đặt ra một cụm từ mới"], ["take a surprising twist", "có một bước ngoặt bất ngờ"], ["conduct studies into", "tiến hành nghiên cứu về"], ["be separated at birth", "bị chia tách từ khi mới sinh"], ["be reunited as adults", "được đoàn tụ khi trưởng thành"], ["over two decades", "trong khoảng thời gian hai thập kỷ"], ["be reared apart", "được nuôi dưỡng riêng biệt"], ["carry out numerous tests", "tiến hành nhiều bài kiểm tra"], ["advertise in newspapers", "đăng quảng cáo trên báo"]], "grammar": ["Lồng mệnh đề quan hệ và quá khứ hoàn thành", "Studies into identical twins who had been separated at birth and reunited as adults.", "Studies into identical twins – Cụm danh từ chính.", "who had been separated at birth – Mệnh đề quan hệ, quá khứ hoàn thành bị động.", "and reunited as adults – Hai phân từ quá khứ dùng chung had been.", "Cấu trúc đầy đủ: Identical twins who had been separated at birth and had been reunited as adults. Có thể lược bỏ", "had been ở vế thứ hai để tránh lặp.", "Researchers interviewed children who had been abandoned at birth and raised in foster homes.", "The study focused on employees who had been recruited overseas and trained locally.", "Scientists examined animals that had been rescued from captivity and released into the wild."]}, {"stem": "Epigenetic processes are different from both genetic and environmental processes.", "vi": "Các quá trình biểu sinh khác với cả quá trình di truyền và quá trình liên quan đến môi trường.", "key": "TRUE", "compare": [["epigenetic processes", "epigenetic processes"], ["genetic processes", "nature"], ["environmental processes", "nurture"], ["different from both", "tied to neither ... nor ..."], ["a distinct process", "a third component"]], "whyVI": "Cụm neither nature nor nurture cho thấy rằng tác giả đang phân biệt epigenetic processes với cả hai yếu tố đã đề cập trước đó. Cụm a third component tiếp tục củng cố thông tin rằng đây là một thành phần thứ ba. Xét theo nội dung bài đọc, câu hỏi và dẫn chứng có cùng ý nghĩa. Matching information TRUE.", "whyEN": "The passage calls epigenetics a third component and uses neither … nor … to distinguish it from nature and nurture.", "evidence": ["Lately, however, twin studies have helped lead scientists to a radical new conclusion: that nature and nurture are not the only elemental forces at work.", "Epigenetic processes are chemical reactions tied to neither nature nor nurture but representing what researchers have called a ‘third component’."], "evidenceVI": "Đoạn 6: Tuy nhiên, gần đây, các nghiên cứu về sinh đôi đã giúp các nhà khoa học đi đến một kết luận hoàn toàn mới: yếu tố bẩm sinh và sự nuôi dưỡng không phải là những yếu tố cơ bản duy nhất đang tác động. Đoạn 7: Các quá trình biểu sinh là những phản ứng hóa học không thuộc về cả yếu tố bẩm sinh lẫn sự nuôi dưỡng, mà đại diện cho cái mà các nhà nghiên cứu gọi là “thành phần thứ ba”.", "paragraph": 6, "vocab": [["reach a radical new conclusion", "đi đến một kết luận hoàn toàn mới"], ["elemental forces", "các yếu tố tác động cơ bản"], ["be at work", "đang hoạt động, đang tác động"], ["a third factor in play", "một yếu tố thứ ba đang tác động"], ["serve as a bridge between", "đóng vai trò cầu nối giữa"], ["operate on its own", "hoạt động độc lập"], ["shape who we are", "định hình con người chúng ta"], ["epigenetic processes", "các quá trình biểu sinh"], ["chemical reactions", "các phản ứng hóa học"], ["be tied to", "có liên hệ với"], ["genetic code", "mã di truyền"], ["gene expression", "sự biểu hiện gen"], ["strengthen or weaken a gene", "tăng cường hoặc làm suy yếu hoạt động của gen"], ["turn a gene on or off", "kích hoạt hoặc bất hoạt gen"]], "grammar": ["Neither A nor B, but C – Cấu trúc phủ nhận cả hai đối tượng A và B, sau đó đưa ra một đối tượng C khác.", "Epigenetic processes are chemical reactions tied to neither nature nor nurture but representing what", "researchers have called a third component.", "Main clause: Epigenetic processes are chemical reactions.", "Past participle phrase: tied to neither nature nor nurture.", "Present participle phrase: but representing what researchers have called a third component.", "Viết lại dưới dạng mệnh đề quan hệ đầy đủ: Epigenetic processes are chemical reactions that are tied to neither", "nature nor nurture but that represent what researchers have called a third component.", "The problem is caused by neither technological limitations nor financial constraints but by poor management.", "The policy is designed to benefit neither employers nor employees alone but society as a whole.", "The decision is based on neither personal preferences nor political pressure but on scientific evidence."]}], "paraphrases": [["be due to", "result from", "bắt nguồn từ"], ["genetic causes", "hereditary factors", "yếu tố di truyền"], ["virtually the same", "almost identical", "gần như giống hệt nhau"], ["environmental factors", "external influences", "các tác động từ bên ngoài"], ["vulnerability to disease", "susceptibility to illness", "khả năng dễ mắc bệnh"], ["be rooted in", "have its origins in", "có nguồn gốc từ"], ["with respect to", "in relation to", "liên quan đến"], ["quantify the extent to which", "measure the degree to which", "đo lường mức độ mà"], ["pinpoint the influence of", "identify the precise effect of", "xác định chính xác tác động của"], ["the interplay of", "the interaction between", "sự tương tác giữa"], ["be crucial to", "be essential to", "đóng vai trò thiết yếu đối với"], ["date back to", "originate in", "có nguồn gốc từ"], ["coin a phrase", "introduce a new expression", "đặt ra một cụm từ mới"], ["take a surprising twist", "undergo an unexpected change", "có sự thay đổi bất ngờ"], ["be reared apart", "be brought up separately", "được nuôi dưỡng riêng biệt"], ["numerous tests", "a large number of tests", "nhiều bài kiểm tra"], ["carry out tests", "conduct tests", "tiến hành kiểm tra"], ["a mountain of data", "a vast amount of data", "lượng dữ liệu khổng lồ"], ["genetic makeup", "genetic composition", "cấu tạo di truyền"], ["in broad terms", "generally speaking", "nói một cách khái quát"], ["shape our lives", "influence how we live", "định hình cuộc sống"], ["a radical new conclusion", "a fundamentally different conclusion", "một kết luận hoàn toàn mới"], ["be in play", "be involved", "đang tham gia tác động"], ["serve as a bridge", "act as a link", "đóng vai trò kết nối"], ["operate on its own", "function independently", "hoạt động độc lập"]], "master": [["offer a precious opportunity", "provide a valuable opportunity", "mang lại cơ hội quý giá"], ["untangle the influence of", "distinguish between the effects of", "phân tách ảnh hưởng của"], ["be due to", "result from", "bắt nguồn từ"], ["virtually the same", "almost identical", "gần như giống hệt nhau"], ["quantify the extent to which", "measure the degree to which", "định lượng mức độ mà"], ["with respect to", "in relation to", "liên quan đến"], ["vulnerability to", "susceptibility to", "khả năng dễ bị tác động"], ["be rooted in", "stem from", "bắt nguồn từ"], ["at least in part", "at least partly", "ít nhất một phần"], ["lines of research", "areas of investigation", "các hướng nghiên cứu"], ["pinpoint the influence of", "identify the precise impact of", "xác định chính xác ảnh hưởng của"], ["measure the role of", "assess the contribution of", "đánh giá vai trò của"], ["be crucial to", "be essential to", "đóng vai trò thiết yếu đối với"], ["the interplay of", "the interaction between", "sự tương tác giữa"], ["date back to", "have its origins in", "có nguồn gốc từ"], ["suggest an approach", "propose a method", "đề xuất một phương pháp"], ["coin a phrase", "introduce a new expression", "đặt ra một cụm từ mới"], ["take a surprising twist", "take an unexpected turn", "có một bước ngoặt bất ngờ"], ["carry out numerous tests", "conduct a series of tests", "tiến hành nhiều bài kiểm tra"], ["a mountain of data", "a vast amount of data", "khối lượng dữ liệu khổng lồ"], ["the key to something", "the central element of something", "yếu tố then chốt"], ["in broad terms", "broadly speaking", "nói một cách khái quát"], ["measure the extent to which", "assess the degree to which", "đo lường mức độ mà"], ["shape our lives", "influence the way we live", "định hình cuộc sống"], ["lead someone to a conclusion", "prompt someone to draw a conclusion", "khiến ai đi đến kết luận"], ["a radical new conclusion", "a fundamentally different conclusion", "một kết luận hoàn toàn mới"], ["factors at work", "underlying influences", "những yếu tố đang tác động"], ["serve as a bridge between", "act as a link between", "đóng vai trò cầu nối giữa"], ["operate on its own", "function independently", "hoạt động độc lập"], ["be tied to", "be associated with", "có mối liên hệ với"]], "retell": ["Well, let me explain how twin studies help us understand human behaviour.", "To begin with, twins offer a precious opportunity for scientists to untangle the influence of genes and the environment. By comparing identical twins with fraternal twins, researchers can measure the extent to which genetic factors shape our lives.", "For example, some differences between identical twins may be due to environmental factors, while similarities in their vulnerability to certain diseases may be rooted in heredity.", "Historically, twin studies date back to 1875. However, they took a surprising twist in the 1980s, when researchers began studying twins who had been separated at birth and reunited as adults.", "More recently, scientists have reached a radical new conclusion: there is a third factor in play, known as epigenetics. This factor can serve as a bridge between our genes and the environment or operate on its own.", "Overall, understanding the interplay of these factors is crucial to understanding how our personalities, behaviour and health are shaped."]}</script>
+<script>
+'use strict';
+const {paragraphs, questions, paraphrases, master, retell} = JSON.parse(document.querySelector('#lesson-data').textContent);
+const main = document.querySelector('#main');
+const audio = document.querySelector('#reading-audio');
+const player = document.querySelector('#player');
+const reset = document.querySelector('#reset');
+const rate = document.querySelector('#rate');
+const options = ['TRUE', 'FALSE', 'NOT GIVEN'];
+const sentences = paragraphs.flatMap((p, pi) => p.sentences.map(s => ({...s, pi})));
+const priorities = [[2,3,11],[5,8,11],[0,2,5],[1,3,4],[0,9,14],[1,9,11],[2,5,9]];
+const cloze = [
+ ['The mentoring scheme can ___ for young researchers.', 'offer a precious opportunity', ['measure the role of inheritance','be due to environmental factors']],
+ ['The survey seeks to ___ travel costs affect attendance.', 'quantify the extent to which', ['with respect to','be rooted in heredity']],
+ ['The researchers hope to ___ home routines on learning.', 'pinpoint the influence of', ['be crucial to understanding','determine our personalities']],
+ ['The project could ___ if the team discovers new evidence.', 'take a surprising twist', ['coin a phrase','become known as']],
+ ['The experiment generated ___ for the team to analyse.', 'a mountain of data', ['genetic makeup','the invisible hand of genetic influence']],
+ ['Peer mentoring can ___ newcomers and experienced students.', 'serve as a bridge between', ['operate on its own','be at work']],
+ ['High absenteeism may ___ poor public transport.', 'be tied to', ['represent a third component','strengthen or weaken']]
+];
+let mode = 'home';
+let homeVI = false;
+let collVI = false;
+let practiceVI = false;
+let ci = 0;
+let qi = 0;
+let si = 0;
+let activeChunk = -1;
+let collScreen = 'learn';
+let practiceResults = false;
+let notes = '';
+let noteOpen = false;
+let annotations = Array.from({length:paragraphs.length}, () => []);
+let answers = questions.map(() => ({value:'', checked:false}));
+let quick = paragraphs.map(() => ({values:['','','',''], checked:false}));
+let builds = sentences.map(emptyBuild);
+let sentenceEnd = null;
+let sentenceTimer = 0;
+let playRequest = 0;
+let speaking = -1;
+
+function emptyBuild(s) {
+  const order = shuffled(s.chunks.map((_,i) => i));
+  if (order.every((v,i) => v===i)) order.push(order.shift());
+  return {order, selected:[], status:'', hint:false, show:false, hideVI:false};
+}
+function shuffled(items) {
+  const copy = [...items];
+  for (let i=copy.length-1; i>0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [copy[i],copy[j]] = [copy[j],copy[i]];
+  }
+  return copy;
+}
+function escapeHTML(value) {
+  return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+}
+const e = escapeHTML;
+function button(label, action, value='', extra='') {
+  return '<button type="button" data-action="'+action+'" data-value="'+e(value)+'" '+extra+'>'+e(label)+'</button>';
+}
+function pressed(value) { return 'aria-pressed="'+Boolean(value)+'"'; }
+function selected(value) { return value ? 'aria-current="true"' : ''; }
+function table(headers, rows, attrs='') {
+  return '<table '+attrs+'><thead><tr>'+headers.map(h=>'<th scope="col">'+e(h)+'</th>').join('')+'</tr></thead><tbody>'+
+    rows.map(row=>'<tr>'+row.map(c=>'<td>'+e(c)+'</td>').join('')+'</tr>').join('')+'</tbody></table>';
+}
+function pane(title, content, id, label='') {
+  return '<section class="pane" aria-labelledby="'+id+'-title"><header class="pane-head"><h2 id="'+id+'-title">'+e(title)+'</h2>'+
+    (label ? '<small>'+e(label)+'</small>' : '')+'</header><div class="scroll" id="'+id+'" tabindex="0">'+content+'</div></section>';
+}
+function proname(index) { return 'P'+(index+1)+' · '+paragraphs[index].name; }
+
+function chunkText(p, pi, active) {
+  const sorted = p.phrases.map((phrase,i)=>({...phrase,i})).filter(phrase=>phrase.loc)
+    .sort((a,b)=>a.loc[0]-b.loc[0] || b.loc[1]-a.loc[1]);
+  const marks = [];
+  for (const mark of sorted) {
+    if (!marks.length || marks[marks.length-1].loc[1]<=mark.loc[0]) marks.push(mark);
+  }
+  const chosen = p.phrases[active];
+  if (chosen?.loc) {
+    for (let i=marks.length-1; i>=0; i--) {
+      if (marks[i].loc[0]<chosen.loc[1] && marks[i].loc[1]>chosen.loc[0]) marks.splice(i,1);
+    }
+    marks.push({...chosen,i:active});
+    marks.sort((a,b)=>a.loc[0]-b.loc[0]);
+  }
+  let cursor=0;
+  let copy='';
+  for (const mark of marks) {
+    const [a,b]=mark.loc;
+    copy+=e(p.en.slice(cursor,a))+button(p.en.slice(a,b),'read-chunk',pi+':'+mark.i,
+      'id="phrase-'+pi+'-'+mark.i+'" class="chunk-link'+(mark.i===active?' active':'')+'" aria-label="'+e(p.en.slice(a,b)+' · View meaning')+'"');
+    cursor=b;
+  }
+  return copy+e(p.en.slice(cursor));
+}
+
+function home() {
+  return '<div class="bar" aria-label="Go to paragraph">'+paragraphs.map((_,i)=>button('P'+(i+1),'home-paragraph',i)).join('')+
+    '<span class="spacer"></span>'+button(homeVI?'Hide Vietnamese':'Show Vietnamese','home-vi','',pressed(homeVI))+'</div>'+
+    '<section class="home-reader card">'+paragraphs.map((p,pi)=>
+      '<article class="read-block" id="home-p'+pi+'"><h3>'+e(proname(pi))+'</h3><p class="en-copy" data-home-reading="'+pi+'">'+chunkText(p,pi,-1)+'</p>'+
+      '<div class="focus-card" id="home-meaning-'+pi+'" hidden></div>'+
+      '<p class="vi-copy" lang="vi" '+(homeVI?'':'hidden')+'>'+e(p.vi)+'</p></article>').join('')+'</section>';
+}
+function noteHTML(p) {
+  return p.notes.map(block=>{
+    const t=block.split('\n').map(line=>e(line));
+    return '<p>'+t.join('<br>').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+      .replace(/(^|>)\*([^*]+)\*(?=<|$)/g,'$1<em>$2</em>').replace(/&amp;#x20;/g,'')+'</p>';
+  }).join('');
+}
+function linkedNotes(p, key) {
+  const stems = {
+    'be rooted in heredity':'be rooted in',
+    'vulnerability to disease':'vulnerability to',
+    'the interplay of nature and nurture':'the interplay',
+    'be crucial to understanding':'be crucial to',
+    'the key to an approach':'the key to',
+    'turn a gene on or off':'turn something on or off',
+    'suggest an approach':'suggest an approach',
+    'be at work':'factors at work',
+  };
+  const target=(stems[key.toLowerCase()]||key).toLowerCase();
+  const groups=[];
+  for (const line of p.notes) {
+    const heading=line.match(/^\*\*(.+?)\*\*$/);
+    if(heading) groups.push({title:heading[1],lines:[]});
+    else groups.at(-1)?.lines.push(line);
+  }
+  const note=groups.find(group=>group.title.toLowerCase().startsWith(target));
+  return note ? noteHTML({notes:note.lines}) : '';
+}
+function gloss(key) {
+  return [...master,...paraphrases].find(item=>item[0].toLowerCase()===key.toLowerCase())?.[1] || '';
+}
+function chunkCard(p,index,withFind) {
+  const phrase = p.phrases[index];
+  if (!phrase) return '';
+  const source = phrase.loc ? p.en.slice(...phrase.loc) : '';
+  const sentencesWithChunk = source ? p.sentences.find(line=>line.en.includes(source))?.en : '';
+  const paraphrase = gloss(phrase.key);
+  return '<div class="focus-card"><h3 lang="en">'+e(phrase.key)+'</h3><p lang="vi">'+e(phrase.meaning)+'</p>'+
+    (paraphrase?'<p><strong>Paraphrase</strong> · '+e(paraphrase)+'</p>':'')+
+    (source && source.toLowerCase()!==phrase.key.toLowerCase()?'<p><strong>In the passage</strong> · '+e(source)+'</p>':'')+
+    (sentencesWithChunk?'<p>'+e(sentencesWithChunk)+'</p>':'')+
+    (withFind?linkedNotes(p,phrase.key):'')+
+    (withFind&&source?button('Find in passage','find-chunk',index):'')+'</div>';
+}
+function quickContent(p) {
+  const exercise=quick[ci];
+  const indices=priorities[ci];
+  const words=indices.map(i=>p.phrases[i]);
+  const meanings=[words[1].meaning,words[2].meaning,words[0].meaning];
+  const gap=cloze[ci];
+  const choiceWords=[gap[2][0],gap[1],gap[2][1]];
+  function field(i, label, choices, expected) {
+    const value=exercise.values[i];
+    const checked=exercise.checked;
+    const correct=value===expected;
+    return '<label><strong>'+e(label)+'</strong><select data-quick="'+i+'"><option value="">Choose an answer</option>'+
+      choices.map(c=>'<option '+(c===value?'selected':'')+'>'+e(c)+'</option>').join('')+'</select></label>'+
+      (checked?'<p class="answer-line '+(correct?'positive':'negative')+'">'+e(correct?'Correct':(value?'Answer · ':'Unanswered · ')+expected)+'</p>':'');
+  }
+  return '<div class="exercise"><fieldset><legend>Match each chunk to its meaning</legend>'+
+    words.map((word,i)=>field(i,word.key,meanings,word.meaning)).join('')+'</fieldset>'+
+    '<fieldset><legend>Use a chunk in a new sentence</legend>'+field(3,gap[0],choiceWords,gap[1])+'</fieldset></div>'+
+    '<div class="actions">'+button('Check','check-quick','','class="primary"')+button('Try Again','retry-quick')+'</div>';
+}
+function collocations() {
+  const p=paragraphs[ci];
+  const list='<div class="vocab-list">'+p.phrases.map((v,i)=>
+    '<button type="button" data-action="pick-chunk" data-value="'+i+'" id="vocab-'+i+'" '+pressed(i===activeChunk)+'><strong>'+e(v.key)+
+    '</strong><span lang="vi">'+e(v.meaning)+'</span></button>').join('')+'</div>';
+  const toggles='<div class="subnav">'+button('Learn','coll-screen','learn',pressed(collScreen==='learn'))+
+    button('Quick Check','coll-screen','quick',pressed(collScreen==='quick'))+'</div>';
+  const right=toggles+(collScreen==='learn'
+    ? '<div id="active-chunk">'+chunkCard(p,activeChunk,true)+'</div>'+list+'<details><summary>Usage notes &amp; examples</summary><div class="note-card">'+noteHTML(p)+'</div></details>'
+    : quickContent(p));
+  return '<div class="bar" aria-label="Collocation paragraphs">'+paragraphs.map((_,i)=>button('P'+(i+1),'coll-paragraph',i,selected(ci===i))).join('')+
+    '<span class="spacer"></span>'+button(collVI?'Hide Vietnamese':'Show Vietnamese','coll-vi','',pressed(collVI))+'</div>'+
+    '<div class="split">'+pane('Passage','<article class="read-block"><h3>'+e(proname(ci))+'</h3><p class="en-copy">'+chunkText(p,ci,activeChunk)+'</p>'+
+      (collVI?'<p class="vi-copy" lang="vi">'+e(p.vi)+'</p>':'')+'</article>','coll-passage')+
+    pane('Collocations',right,'coll-content','Paragraph '+(ci+1)+' of '+paragraphs.length)+'</div>'+
+    '<section class="card home-reader" style="margin-top:12px" aria-label="Review">'+
+    '<details><summary>Master Paraphrasing · 25 items</summary>'+table(['Expression','Paraphrase','Nghĩa tiếng Việt'],paraphrases)+'</details>'+
+    '<details><summary>Master Collocations · 30 chunks</summary>'+table(['Chunk','Paraphrase','Nghĩa tiếng Việt'],master)+'</details>'+
+    '<details><summary>Retell the Passage</summary><div class="review-block"><p class="mini">Nature and nurture → Two lines of research → History → Heritability → Epigenetics</p>'+
+    retell.map(line=>'<p>'+e(line)+'</p>').join('')+'</div></details></section>';
+}
+
+function paragraphMarks(p, pi, reveal) {
+  const ranges=annotations[pi].map(([a,b])=>({a,b,kind:'manual'}));
+  const q=questions[qi];
+  if (reveal) {
+    q.evidence.forEach((line,i)=>{
+      const a=p.en.indexOf(line);
+      if(a>=0) ranges.push({a,b:a+line.length,kind:q.key==='NOT GIVEN'?'related':'found',id:'evidence-'+i});
+    });
+  }
+  const breaks=[...new Set([0,p.en.length,...ranges.flatMap(r=>[r.a,r.b])])].sort((a,b)=>a-b);
+  return breaks.slice(0,-1).map((a,i)=>{
+    const b=breaks[i+1];
+    const matches=ranges.filter(r=>r.a<=a && r.b>=b);
+    const anchor=matches.find(r=>r.a===a && r.id)?.id;
+    return matches.length?'<span '+(anchor?'id="'+anchor+'" ':'')+'class="'+matches.map(r=>r.kind).join(' ')+'">'+e(p.en.slice(a,b))+'</span>':e(p.en.slice(a,b));
+  }).join('');
+}
+function evidenceLink(q) {
+  return button(q.key==='NOT GIVEN'?'Find related paragraph':'Find in passage','find-evidence');
+}
+function explanation(q, response) {
+  const correct=q.key===response.value;
+  const notGiven=q.key==='NOT GIVEN';
+  return '<section class="explanation" aria-label="Explanation"><p role="status" class="result '+(correct?'positive':'negative')+'">'+
+    (correct?'Correct':'Incorrect')+' · Answer '+q.key+'</p><h3>Understand the question</h3><p lang="vi">'+e(q.vi)+'</p>'+
+    '<h3>Keywords and comparison</h3>'+table(['Question','Reading passage'],q.compare)+
+    '<h3>'+(notGiven?'Related text':'Evidence in the passage')+'</h3><div class="evidence-box '+(notGiven?'info':'')+'">'+
+    q.evidence.map(line=>'<p>'+e(line)+'</p>').join('')+'<p lang="vi">'+e(q.evidenceVI)+'</p></div>'+evidenceLink(q)+
+    '<h3>Why '+q.key+'?</h3><p>'+e(q.whyEN)+'</p><p lang="vi">'+e(q.whyVI)+'</p>'+
+    '<details><summary>Vocabulary &amp; Grammar</summary>'+table(['Useful chunk','Nghĩa tiếng Việt'],q.vocab)+
+    '<div class="note-card">'+q.grammar.map(line=>'<p>'+e(line)+'</p>').join('')+'</div></details></section>';
+}
+function resultContent() {
+  const checked=answers.filter(a=>a.checked).length;
+  const correct=answers.filter((a,i)=>a.checked && a.value===questions[i].key).length;
+  return '<h3>'+correct+' / '+questions.length+' correct</h3><p>'+checked+' checked · '+(questions.length-checked)+' unchecked</p>'+
+    '<table class="results-table"><thead><tr><th scope="col">Question</th><th scope="col">Your answer</th><th scope="col">Status</th></tr></thead><tbody>'+
+    answers.map((a,i)=>'<tr><td>'+button(String(i+1),'question',i)+'</td><td>'+e(a.value||'—')+'</td><td>'+
+      (a.checked?(a.value===questions[i].key?'Correct':'Incorrect'):(a.value?'Unchecked':'Unanswered'))+'</td></tr>').join('')+'</tbody></table>'+
+    '<div class="actions">'+button('Back to questions','close-results')+'</div>';
+}
+function practice() {
+  const q=questions[qi];
+  const a=answers[qi];
+  const read=paragraphs.map((p,i)=>'<article class="read-block" id="practice-p'+i+'"><h3>'+e(proname(i))+'</h3>'+
+    '<p class="en-copy" data-reading="'+i+'">'+paragraphMarks(p,i,a.checked&&!practiceResults)+'</p>'+
+    (practiceVI?'<p class="vi-copy" lang="vi">'+e(p.vi)+'</p>':'')+'</article>').join('');
+  const question='<div class="question-card"><p class="mini">Do the following statements agree with the information given in the passage?</p>'+
+    '<details><summary>Answer options</summary><p><strong>TRUE</strong> · The passage agrees.</p><p><strong>FALSE</strong> · The passage contradicts the statement.</p><p><strong>NOT GIVEN</strong> · The passage gives insufficient information.</p></details>'+
+    '<h3 class="mode-title" style="margin-top:12px">Question '+(qi+1)+'</h3><p>'+e(q.stem)+'</p>'+
+    '<div class="choices" role="group" aria-label="Answer choices" style="margin-top:11px">'+options.map(option=>{
+      const color=a.checked?(option===q.key?'correct':(option===a.value?'wrong':'')):'';
+      return button(option,'answer',option,pressed(a.value===option)+' class="'+color+'"');
+    }).join('')+'</div><div class="actions">'+button('Check','check-question','','class="primary" '+(a.value?'':'disabled'))+'</div>'+
+    (a.checked?explanation(q,a):'')+'</div>';
+  let noteBox='';
+  if(noteOpen) noteBox='<div class="note-card"><label for="notes"><strong>Reading notes</strong></label><textarea class="notes" id="notes">'+e(notes)+'</textarea></div>';
+  return '<div class="bar">'+button(practiceVI?'Hide Vietnamese':'Show Vietnamese','practice-vi','',pressed(practiceVI))+
+    '<span class="spacer"></span>'+button('Highlight selection','highlight')+button('Clear highlights','clear-highlights')+
+    button('Notes','notes','',pressed(noteOpen))+'<span class="mini" id="mark-status" role="status"></span></div>'+noteBox+
+    '<div class="split">'+pane('Passage',read,'practice-passage',a.checked&&!practiceResults?(q.key==='NOT GIVEN'?'Related text':'Green · Evidence'):'')+
+    pane(practiceResults?'Results':'Questions',practiceResults?resultContent():question,'practice-content','Questions 1–4')+'</div>'+
+    '<div class="bar" aria-label="Question navigation">'+questions.map((q,i)=>button(String(i+1),'question',i,
+      selected(qi===i&&!practiceResults)+' aria-label="Question '+(i+1)+'" class="'+(answers[i].checked?(answers[i].value===q.key?'passed':'missed'):'')+'"')).join('')+
+    '<span class="spacer"></span>'+button('← Previous','question',qi-1,qi?'':'disabled')+
+    button('Next →','question',qi+1,qi<questions.length-1?'':'disabled')+button('Results','results','','class="primary"')+'</div>';
+}
+
+function sentence() {
+  const s=sentences[si];
+  const b=builds[si];
+  const userChunks=b.selected;
+  const good=b.status==='correct';
+  const complete=builds.filter(x=>x.status==='correct').length;
+  const hintIndex=userChunks.findIndex((value,index)=>value!==index);
+  const nextIndex=hintIndex===-1?userChunks.length:hintIndex;
+  const message={
+    correct:'Correct. Your sentence matches the passage.',
+    wrong:'This order does not match the original sentence.',
+    incomplete:'Add all the chunks before checking.'
+  }[b.status] || '';
+  return '<section class="card sentence"><div class="sentence-top"><div><p class="mini">'+e(proname(s.pi))+'</p><h2>Sentence '+(si+1)+' / '+sentences.length+'</h2></div>'+
+    '<label>Go to sentence <select id="sentence-select">'+sentences.map((_,i)=>'<option value="'+i+'" '+(si===i?'selected':'')+'>'+(i+1)+'</option>').join('')+'</select></label></div>'+
+    '<div class="hint"><div class="hint-head"><strong>Vietnamese hint</strong>'+button(b.hideVI?'Show':'Hide','sentence-vi')+'</div>'+
+    '<p lang="vi" '+(b.hideVI?'hidden':'')+'>'+e(s.vi)+'</p></div>'+
+    '<div class="actions listen-control">'+button('▶ Listen to sentence','listen-sentence','','class="primary"')+button('■ Stop','stop-sentence')+
+    '<span class="mini" id="listen-status" role="status"></span></div>'+
+    '<div class="answer-zone '+(good?'solved':'')+'" aria-label="Your sentence">'+(userChunks.length?
+      userChunks.map(i=>button(s.chunks[i],'remove-chunk',i)).join(''):'<p class="mini">Tap the chunks to build the original sentence.</p>')+'</div>'+
+    '<div class="chunks" aria-label="Available chunks">'+b.order.filter(i=>!userChunks.includes(i)).map(i=>button(s.chunks[i],'add-chunk',i)).join('')+'</div>'+
+    '<div class="actions">'+button('Check','check-sentence','','class="primary"')+button('Hint','hint-sentence')+
+    button('Clear','clear-sentence')+button(b.show?'Hide Answer':'Show Answer','show-sentence')+'</div>'+
+    (b.hint&&!good&&nextIndex<s.chunks.length?'<p class="answer-preview">Chunk '+(nextIndex+1)+' · <strong>'+e(s.chunks[nextIndex])+'</strong></p>':'')+
+    (message?'<p class="result '+(good?'positive':'negative')+'" role="status">'+e(message)+'</p>':'')+
+    (b.show?'<p class="answer-preview"><strong>Original sentence</strong><br>'+e(s.en)+'</p>':'')+
+    '<div class="bar" aria-label="Sentence navigation">'+button('← Previous','sentence-nav',si-1,si?'':'disabled')+
+    '<span class="spacer"></span><strong>'+complete+' / '+sentences.length+' complete</strong><span class="spacer"></span>'+
+    button('Next →','sentence-nav',si+1,si<sentences.length-1?'':'disabled')+'</div></section>';
+}
+
+function fill({keep=false}={}) {
+  const remembered = keep ? [...main.querySelectorAll('.scroll')].map(n=>[n.id,n.scrollTop]) : [];
+  main.innerHTML = {home,coll:collocations,practice,sentence}[mode]();
+  remembered.forEach(([id,top])=>{document.getElementById(id).scrollTop=top;});
+  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
+  reset.hidden=mode==='home';
+  reset.textContent={coll:'Reset paragraph',practice:'Reset practice',sentence:'Reset sentence'}[mode]||'Reset';
+  player.hidden=mode!=='home';
+}
+function moveTo(el, container) {
+  if(!el) return;
+  if(container) container.scrollTop=Math.max(0,el.getBoundingClientRect().top-container.getBoundingClientRect().top+container.scrollTop-24);
+  if(!container || matchMedia('(max-width:780px)').matches) el.scrollIntoView({block:'nearest'});
+}
+function homeChunk(pi, id) {
+  const target=document.querySelector('#home-meaning-'+pi);
+  const alreadyOpen=target.dataset.chunk===String(id) && !target.hidden;
+  main.querySelectorAll('.read-block>.focus-card').forEach(card=>card.hidden=true);
+  if(alreadyOpen) return;
+  target.dataset.chunk=id;
+  target.innerHTML=chunkCard(paragraphs[pi],id,false)+'<div class="actions">'+
+    button('Open in Collocations','open-coll',pi+':'+id)+'</div>';
+  target.hidden=false;
+}
+function selectChunk(i, fromPassage) {
+  activeChunk=i;
+  collScreen='learn';
+  fill({keep:true});
+  if(fromPassage) {
+    moveTo(document.querySelector('#active-chunk'),document.querySelector('#coll-content'));
+  } else {
+    moveTo(document.querySelector('#phrase-'+ci+'-'+i),document.querySelector('#coll-passage'));
+    document.querySelector('#vocab-'+i)?.focus({preventScroll:true});
+  }
+}
+function openMode(next) {
+  if(mode===next) return;
+  stopAudio();
+  mode=next;
+  fill();
+}
+function setSentence(i) {
+  if(!sentences[i]) return;
+  stopAudio();
+  si=i;
+  fill();
+}
+function stopAudio() {
+  playRequest++;
+  clearInterval(sentenceTimer);
+  sentenceEnd=null;
+  audio.pause();
+  const status=document.querySelector('#listen-status');
+  if(status) status.textContent='';
+  speaking=-1;
+}
+function listenSentence() {
+  stopAudio();
+  const request=playRequest;
+  const [start,end]=sentences[si].time;
+  const run=()=>{
+    if(request!==playRequest || mode!=='sentence') return;
+    if(!(audio.duration>=end)) {
+      const status=document.querySelector('#listen-status');
+      if(status) status.textContent='Audio is unavailable.';
+      return;
+    }
+    sentenceEnd=end;
+    audio.currentTime=start;
+    audio.play().then(()=>{
+      if(request!==playRequest) return;
+      const status=document.querySelector('#listen-status');
+      if(status) status.textContent='Playing this sentence';
+      sentenceTimer=setInterval(stopAtBoundary,25);
+    }).catch(()=>{
+      if(request!==playRequest) return;
+      const status=document.querySelector('#listen-status');
+      if(status) status.textContent='Audio could not play. Tap to try again.';
+    });
+  };
+  if(audio.readyState>=1) run();
+  else audio.addEventListener('loadedmetadata',run,{once:true});
+}
+function stopAtBoundary() {
+  if(sentenceEnd!==null && audio.currentTime>=sentenceEnd) {
+    const end=sentenceEnd;
+    stopAudio();
+    audio.currentTime=end;
+  }
+}
+audio.addEventListener('timeupdate',()=>{
+  stopAtBoundary();
+  if(mode!=='home') return;
+  const match=sentences.find(s=>audio.currentTime>=s.time[0] && audio.currentTime<=s.time[1]);
+  const pi=audio.paused?-1:(match?.pi ?? -1);
+  if(pi===speaking) return;
+  main.querySelector('.now-speaking')?.classList.remove('now-speaking');
+  main.querySelector('[data-home-reading="'+pi+'"]')?.classList.add('now-speaking');
+  speaking=pi;
+});
+audio.addEventListener('pause',()=>{main.querySelector('.now-speaking')?.classList.remove('now-speaking');speaking=-1;});
+audio.addEventListener('error',()=>{
+  document.querySelector('#audio-error').textContent='Could not load reading.mp3.';
+  const status=document.querySelector('#listen-status');
+  if(status) status.textContent='Could not load reading.mp3.';
+});
+document.querySelector('#stop-all').addEventListener('click',()=>{stopAudio();if(audio.readyState) audio.currentTime=0;});
+rate.addEventListener('change',()=>audio.playbackRate=Number(rate.value));
+
+function highlightSelection() {
+  const selection=window.getSelection();
+  const range=selection?.rangeCount ? selection.getRangeAt(0) : null;
+  function reading(node) {
+    return (node.nodeType===1?node:node.parentElement)?.closest('[data-reading]');
+  }
+  const p=range?reading(range.startContainer):null;
+  if(!p || range.collapsed || p!==reading(range.endContainer)) {
+    document.querySelector('#mark-status').textContent='Select text within one paragraph.';
+    return;
+  }
+  const before=range.cloneRange();
+  before.selectNodeContents(p);
+  before.setEnd(range.startContainer,range.startOffset);
+  const offset=before.toString().length;
+  const end=offset+range.toString().length;
+  annotations[Number(p.dataset.reading)].push([offset,end]);
+  selection.removeAllRanges();
+  fill({keep:true});
+  document.querySelector('#mark-status').textContent='Text highlighted.';
+}
+
+const actions = {
+  'home-paragraph':v=>moveTo(document.querySelector('#home-p'+v)),
+  'home-vi':()=>{homeVI=!homeVI;fill();},
+  'read-chunk':value=>{
+    const [pi,i]=value.split(':').map(Number);
+    if(mode==='home') homeChunk(pi,i);
+    else selectChunk(i,true);
+  },
+  'open-coll':value=>{
+    [ci,activeChunk]=value.split(':').map(Number);
+    collScreen='learn';
+    openMode('coll');
+  },
+  'coll-paragraph':value=>{ci=Number(value);activeChunk=-1;fill();},
+  'coll-screen':value=>{collScreen=value;fill({keep:true});},
+  'coll-vi':()=>{collVI=!collVI;fill({keep:true});},
+  'pick-chunk':value=>selectChunk(Number(value),false),
+  'find-chunk':value=>moveTo(document.querySelector('#phrase-'+ci+'-'+value),document.querySelector('#coll-passage')),
+  'check-quick':()=>{quick[ci].checked=true;fill({keep:true});},
+  'retry-quick':()=>{quick[ci]={values:['','','',''],checked:false};fill({keep:true});},
+  'practice-vi':()=>{practiceVI=!practiceVI;fill({keep:true});},
+  'question':value=>{qi=Number(value);practiceResults=false;fill();},
+  'answer':value=>{answers[qi]={value,checked:false};fill({keep:true});},
+  'check-question':()=>{answers[qi].checked=true;fill({keep:true});},
+  'find-evidence':()=>{
+    const q=questions[qi];
+    const target=q.key==='NOT GIVEN'?document.querySelector('#practice-p'+q.paragraph):
+      document.querySelector('#evidence-'+(qi===3?1:0));
+    moveTo(target,document.querySelector('#practice-passage'));
+  },
+  'highlight':highlightSelection,
+  'clear-highlights':()=>{annotations=paragraphs.map(()=>[]);fill({keep:true});},
+  'notes':()=>{noteOpen=!noteOpen;fill({keep:true});if(noteOpen) document.querySelector('#notes').focus();},
+  'results':()=>{practiceResults=true;fill();},
+  'close-results':()=>{practiceResults=false;fill();},
+  'sentence-nav':value=>setSentence(Number(value)),
+  'sentence-vi':()=>{builds[si].hideVI=!builds[si].hideVI;fill();},
+  'listen-sentence':listenSentence,
+  'stop-sentence':stopAudio,
+  'add-chunk':value=>{const b=builds[si];b.selected.push(Number(value));b.status='';b.hint=false;fill();},
+  'remove-chunk':value=>{const b=builds[si];b.selected=b.selected.filter(i=>i!==Number(value));b.status='';b.hint=false;fill();},
+  'check-sentence':()=>{
+    const b=builds[si];
+    b.status=b.selected.length!==sentences[si].chunks.length?'incomplete':(b.selected.every((i,j)=>i===j)?'correct':'wrong');
+    b.hint=false;
+    fill();
+  },
+  'hint-sentence':()=>{builds[si].hint=true;fill();},
+  'clear-sentence':()=>{stopAudio();builds[si]=emptyBuild(sentences[si]);fill();},
+  'show-sentence':()=>{builds[si].show=!builds[si].show;fill();}
+};
+document.querySelector('.main-nav').addEventListener('click',event=>{
+  const nav=event.target.closest('[data-mode]');
+  if(nav) openMode(nav.dataset.mode);
+});
+main.addEventListener('pointerdown',event=>{
+  if(event.target.closest('[data-action=highlight]')) event.preventDefault();
+});
+main.addEventListener('click',event=>{
+  const control=event.target.closest('[data-action]');
+  if(!control || control.disabled) return;
+  const {action,value}=control.dataset;
+  actions[action]?.(value);
+  if(!document.contains(control) && document.activeElement===document.body) {
+    const replacement=[...main.querySelectorAll('[data-action="'+action+'"]')].find(el=>el.dataset.value===value && !el.disabled);
+    (replacement || (action==='add-chunk'?main.querySelector('.chunks button, .answer-zone button'):null))?.focus({preventScroll:true});
+  }
+});
+main.addEventListener('change',event=>{
+  const select=event.target;
+  if(select.id==='sentence-select') {
+    setSentence(Number(select.value));
+    document.querySelector('#sentence-select').focus({preventScroll:true});
+  }
+  if(select.dataset.quick!==undefined) {
+    quick[ci].values[Number(select.dataset.quick)]=select.value;
+    if(quick[ci].checked) {
+      quick[ci].checked=false;
+      fill({keep:true});
+      main.querySelector('[data-quick="'+select.dataset.quick+'"]').focus({preventScroll:true});
+    }
+  }
+});
+main.addEventListener('input', event=>{if(event.target.id==='notes') notes=event.target.value;});
+reset.addEventListener('click',()=>{
+  if(mode==='coll') actions['retry-quick']();
+  if(mode==='practice') {
+    answers=questions.map(()=>({value:'',checked:false}));
+    qi=0;practiceResults=false;notes='';noteOpen=false;
+    annotations=paragraphs.map(()=>[]);
+    fill();
+  }
+  if(mode==='sentence') actions['clear-sentence']();
+});
+fill();
+
+</script>
+</body>
+</html>
